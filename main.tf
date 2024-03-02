@@ -1,3 +1,8 @@
+data "google_compute_subnetwork" "app" {
+  name   = "app"
+  region = "us-east1"
+}
+
 data "google_compute_image" "ubuntu" {
   most_recent = true
   project     = "ubuntu-os-cloud" 
@@ -15,7 +20,7 @@ resource "google_compute_instance" "web" {
     }
   }
   network_interface {
-   subnetwork = "default"
+   subnetwork = "app"
    access_config {
       # Leave empty for dynamic public IP
     }
