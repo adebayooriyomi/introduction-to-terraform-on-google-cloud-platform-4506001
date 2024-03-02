@@ -17,7 +17,7 @@ data "google_compute_image" "ubuntu" {
 }
 
 resource "google_compute_instance" "web" {
-  name         =  google_compute_subnetwork.app.self_link
+  name         =  "web"
   machine_type = "e2-micro"
 
   
@@ -27,7 +27,7 @@ resource "google_compute_instance" "web" {
     }
   }
   network_interface {
-   subnetwork = "app"
+   subnetwork = google_compute_subnetwork.app.self_link
    access_config {
       # Leave empty for dynamic public IP
     }
