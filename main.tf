@@ -7,7 +7,7 @@ resource "google_compute_subnetwork" "app" {
   name          = "app"
   ip_cidr_range = "10.2.0.0/16"
   region        = "us-central1"
-  network       = google_compute_network.custom-test.id
+  network       = google_compute_network.app.id
 }
 
 data "google_compute_image" "ubuntu" {
