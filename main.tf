@@ -1,5 +1,5 @@
 data "google_compute_subnetwork" "app" {
-  name   = "default-us-east1"
+  name   = "app"
   region = "us-east1"
 }
 
