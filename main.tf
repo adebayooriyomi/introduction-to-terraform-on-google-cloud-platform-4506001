@@ -14,7 +14,7 @@ module "app_network" {
    ]
 
    ingress_rules = [{
-      name                    = "${var.network_name}-web
+      name                    = "${var.network_name}-web"
       description             = "Inbound web"
       source_ranges           = ["0.0.0.0/0"]
       target_tags             = ["${var.network_name}-web"]
@@ -61,7 +61,6 @@ resource "google_compute_instance" "web" {
       # Leave empty for dynamic public IP
     }
   }  
-
 
   metadata_startup_script = "apt -y update; apt -y install nginx; echo ${var.app_name} > /var/www/html/index.html"
   allow_stopping_for_update = true
