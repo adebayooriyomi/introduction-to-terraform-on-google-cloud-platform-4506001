@@ -30,7 +30,7 @@ variable "image_family" {
 
 variable "app_name" {
     type = string
-    default = "app"
+    default = "web"
 }
 
 variable "machine_type" {
