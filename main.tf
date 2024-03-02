@@ -19,7 +19,6 @@ data "google_compute_image" "ubuntu" {
 resource "google_compute_instance" "web" {
   name         =  var.app_name
   machine_type = var.machine_type
-  zone         = "$(var.region)-a"
 
   
   boot_disk {
