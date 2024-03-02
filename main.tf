@@ -1,5 +1,3 @@
-
-
 data "google_compute_image" "ubuntu" {
   most_recent = true
   project     = "ubuntu-os-cloud" 
@@ -17,7 +15,7 @@ resource "google_compute_instance" "web" {
     }
   }
   network_interface {
-   subnetwork = "web"
+   subnetwork = "default"
    access_config {
       # Leave empty for dynamic public IP
     }
