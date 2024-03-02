@@ -17,7 +17,7 @@ data "google_compute_image" "ubuntu" {
 }
 
 resource "google_compute_instance" "web" {
-  name         = "web"
+  name         =  google_compute_subnetwork.app.self_link
   machine_type = "e2-micro"
 
   
